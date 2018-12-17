@@ -24,5 +24,6 @@ lvm_logical_volume 'lv_myAPP' do
   size '100%VG'
   filesystem 'xfs'
   mount_point '/myAPP'
+  wipe_signatures true
 end  
 

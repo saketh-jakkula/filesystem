@@ -1,3 +1,3 @@
 
 default['disks'] = shell_out('ls /dev/sd*').stdout.split
-default['pvs'] = %w(/dev/sdb /dev/sdc)
+default['pvs'] = shell_out('pvscan -sn|grep dev').stdout.split
