@@ -11,11 +11,12 @@ node['disks'].each do |disk|
   end
 end
 
-#node.default['pvs'] = shellout(
+
+#node.default['pvs'] = shell_out('pvscan -sn|grep dev').stdout.split
 
 host = node['hostname']
 lvm_volume_group "vg_#{host}" do
-  physical_volumes node['pvs']
+  physical_volumes lazy { node.default['pvs'] = shell_out('pvscan -sn|grep dev').stdout.split }
   ignore_failure true
 end
 
