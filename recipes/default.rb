@@ -25,5 +25,7 @@ lvm_logical_volume 'lv_myAPP' do
   filesystem 'xfs'
   mount_point '/myAPP'
   wipe_signatures true
+  remove_mount_point true
+  action :remove
 end  
 
