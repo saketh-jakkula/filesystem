@@ -1,7 +1,5 @@
-# filesystem
+# Filesystem
 
-TODO: Enter the cookbook description here.
+#### Creates file system.
 
-Creates file system.
-
-Add the pvs list in attributes/default.rb, these PVs are added to the VG
+Add the list of new hard disks toattributes/default.rb, PV is created on them and added to the VG
